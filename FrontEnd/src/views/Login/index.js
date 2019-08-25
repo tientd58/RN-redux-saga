@@ -3,16 +3,16 @@ import { SafeAreaView, Text, View } from 'react-native';
 
 import styles from './styles';
 
-class HomeScreen extends React.Component {
+class LoginScreen extends React.Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
         <View style={[styles.container, {justifyContent: 'center', alignItems: 'center'}]}>
-          <Text>home screen</Text>
+          <Text>login screen</Text>
         </View>
       </SafeAreaView>
     );
   }
 }
 
-export default HomeScreen;
+export default LoginScreen;
