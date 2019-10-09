@@ -82,8 +82,8 @@ class HomeScreen extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  listUser: state.UserReducer.listUser
+const mapStateToProps = ({UserReducer}) => ({
+  listUser: UserReducer.listUser
 });
 
 const mapDispatchToProps = {

@@ -1,29 +1,21 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import { fromJS } from 'immutable';
-import { persistState } from 'redux-devtools';
+import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
 import rootSaga from '../sagas';
 import reducers from '../reducers';
 
 const sagaMiddleware = createSagaMiddleware();
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const enhancers = composeEnhancers(
-  applyMiddleware(sagaMiddleware),
-  persistState(
-    window.location.href.match(/[?&]debug_session=([^&#]+)\b/)
-  )
-);
-
-export default (initialState = {}) => {
+const storeApp = () => {
   const store = createStore(
     reducers,
-    fromJS(initialState),
-    enhancers
+    {},
+    applyMiddleware(sagaMiddleware),
   );
 
   sagaMiddleware.run(rootSaga);
 
   return store;
 };
+
+export const store = storeApp();
