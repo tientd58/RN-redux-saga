@@ -29,6 +29,9 @@ target 'FrontEnd' do
 
 
 
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'FrontEndTests' do
     inherit! :search_paths
     # Pods for testing

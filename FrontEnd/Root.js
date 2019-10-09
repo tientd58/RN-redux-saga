@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, StatusBar, View, StyleSheet, Text } from 'react-native';
+import { Platform, StatusBar, View, StyleSheet } from 'react-native';
 
 import AppNavigator from './src/navigator/AppNavigator';
 
@@ -14,7 +14,7 @@ class RootContainer extends React.PureComponent {
   render() {
     return (
       <View style={styles.container}>
-        {Platform.OS === 'ios' && <StatusBar barStyle="light-content" translucent={true} />}
+        {Platform.OS === 'ios' && <StatusBar barStyle="light-content" translucent />}
         <AppNavigator />
       </View>
     );

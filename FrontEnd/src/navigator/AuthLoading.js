@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
-import CircleLoading from '../components/Presentations/CircleLoading';
 import { colors } from '../modules/colors';
-import { StorageKey, Storage } from '../modules/utils/storage';
 import { NavigationRoutes } from './Routes';
 import Responsive from '../modules/utils/responsive';
+import { StorageKey, Storage } from '../modules/utils/storage';
+import CircleLoading from '../components/Presentations/CircleLoading';
 
 const styles = StyleSheet.create({
   container: {
@@ -31,7 +31,7 @@ class AuthLoading extends React.PureComponent {
   checkAuthencation = async () => {
     const { navigation } = this.props;
     const authToken = await Storage.get(StorageKey.AuthToken);
-    if (authToken === null) {
+    if (authToken !== null) {
       navigation.navigate(NavigationRoutes.AuthStack);
     } else {
       navigation.navigate(NavigationRoutes.Home);
@@ -41,7 +41,7 @@ class AuthLoading extends React.PureComponent {
   render() {
     return (
       <View style={styles.container}>
-        <CircleLoading isVisible={true} />
+        <CircleLoading isVisible />
       </View>
     );
   }

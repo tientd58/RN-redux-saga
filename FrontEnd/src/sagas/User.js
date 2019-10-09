@@ -1,10 +1,11 @@
-import { call, put, spawn, takeEvery, all } from 'redux-saga/effects';
+import { call, put, fork, takeEvery, all } from 'redux-saga/effects';
 
 import {
-  login as loginService
+  login as loginService,
+  getAllUser as getAllUserService
 } from '../services/User';
 import { USER } from '../actions/types';
-import { loginSuccess, loginFailure } from '../actions/User';
+import { loginSuccess, loginFailure, getAllUserFailure, getAllUserSuccess } from '../actions/User';
 
 function* handleLogin({payload}) {
   try {
@@ -16,12 +17,27 @@ function* handleLogin({payload}) {
   }
 }
 
+function* handleGetAllUser({payload}) {
+  try {
+    const {params} = payload;
+    const res = yield call(getAllUserService, params);
+    yield put(getAllUserSuccess(res.data.results));
+  } catch (error) {
+    yield put(getAllUserFailure(error));
+  }
+}
+
 function* watchUserLogin() {
-  yield takeEvery(USER.LOGIN_REQUEST, handleLogin)
+  yield takeEvery(USER.LOGIN_REQUEST, handleLogin);
 };
+
+function* watchGetAllUser() {
+  yield takeEvery(USER.GET_ALL_USER_REQUEST, handleGetAllUser);
+}
 
 export default function* rootSaga() {
   yield all([
-    spawn(watchUserLogin)
-  ])
+    fork(watchUserLogin),
+    fork(watchGetAllUser),
+  ]);
 }

@@ -1,12 +1,16 @@
 import { createStackNavigator } from 'react-navigation';
 
-import { NavigationRoutes } from './Routes';
 import HomeScreen from '../views/Home';
+import { NavigationRoutes } from './Routes';
+import FavouriteUserScreen from '../views/Home/FavouriteUser';
 
 const HomeStack = createStackNavigator(
   {
     [NavigationRoutes.Home]: {
       screen: HomeScreen
+    },
+    [NavigationRoutes.FavouriteUser]: {
+      screen: FavouriteUserScreen
     }
   },
   {

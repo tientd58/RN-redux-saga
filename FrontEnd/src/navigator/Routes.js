@@ -3,5 +3,6 @@ export const NavigationRoutes = {
   AuthStack: 'AuthStack',
   MainTab: 'MainTab',
   Home: 'Home',
-  Login: 'Login'
-}
+  Login: 'Login',
+  FavouriteUser: 'FavouriteUser'
+};

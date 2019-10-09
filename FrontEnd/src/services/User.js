@@ -1,3 +1,5 @@
-import { get, post, put } from './Api';
+import Axios from './Api';
 
-export const login = (params) => post('/login', params);
+export const login = (params) => Axios.post('/login', params);
+
+export const getAllUser = (params) => Axios.get(`/${params}`);
