@@ -11,7 +11,7 @@ import Responsive from '../../modules/utils/responsive';
 class FavouriteUserScreen extends React.Component {
 
   static navigationOptions = ({ navigation }) => ({
-    title: 'List Favourite User',
+    title: 'My Favourite',
     headerStyle: {
       backgroundColor: colors.MAIN_BACKGROUND,
       borderBottomWidth: 0,
@@ -72,6 +72,7 @@ class FavouriteUserScreen extends React.Component {
             data={listUser}
             renderItem={this.renderItem}
             keyExtractor={item => item.uid}
+            showsVerticalScrollIndicator={false}
           />
         ) : <Text>There are no users in the favourite list</Text>}
       </SafeAreaView>
