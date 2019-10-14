@@ -6,9 +6,16 @@ export const colors = {
   OVERLAY_COLOR: 'rgba(0,0,0,0.3)',
   BLUE: '#304791',
   WHITE: '#fff',
+  RED: '#FF0000',
+  YELLOW: '#FFFF00',
+  GREEN: '#008000',
+  ORANGE: '#FFA500',
   GRAY: '#ccc',
   LIGHT_GRAY: '#e5dfdf',
   BLACK: '#000',
   ACTIVE: '#33cc33',
-  GRAY_SHADE: '#F6F6F6'
+  GRAY_SHADE: '#F6F6F6',
+  BACKGROUND: '#F4FCFE',
+  SCHEDULE_BACKGROUND: '#252236',
+  SCHEDULE_ITEM: '#2F2C45',
 };

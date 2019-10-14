@@ -4,5 +4,7 @@ export const NavigationRoutes = {
   MainTab: 'MainTab',
   Home: 'Home',
   Login: 'Login',
-  FavouriteUser: 'FavouriteUser'
+  FavouriteUser: 'FavouriteUser',
+  Schedule: 'Schedule',
+  AddSchedule: 'AddSchedule'
 };

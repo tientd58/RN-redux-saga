@@ -10,7 +10,7 @@ import CircleLoading from '../components/Presentations/CircleLoading';
 const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: colors.MAIN_BACKGROUND,
+    backgroundColor: colors.SCHEDULE_BACKGROUND,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -31,8 +31,9 @@ class AuthLoading extends React.PureComponent {
   checkAuthencation = async () => {
     const { navigation } = this.props;
     const authToken = await Storage.get(StorageKey.AuthToken);
-    if (authToken !== null) {
-      navigation.navigate(NavigationRoutes.AuthStack);
+    if (authToken === null) {
+      // navigation.navigate(NavigationRoutes.AuthStack);
+      navigation.navigate(NavigationRoutes.Schedule);
     } else {
       navigation.navigate(NavigationRoutes.Home);
     }

@@ -12,9 +12,14 @@ const guidelineBaseHeight = 667; // height of standard device (iphone 6)
  * @param {number} factor: scale factor 
  */
 class Responsive {
-  static h = (horizontalScale) => (width / guidelineBaseWidth * horizontalScale); // return value scale by horizontal
-  static v = (verticalScale) => (height / guidelineBaseHeight * verticalScale); // return value scale by vertical
-  static m = (moderateScale, factor = 0.5) => (moderateScale + ((height / guidelineBaseWidth * moderateScale) - moderateScale) * factor); // return value scale by horizontal base on factor
+  // return value scale by horizontal
+  static h = (horizontalScale) => (width / guidelineBaseWidth * horizontalScale);
+
+  // return value scale by vertical
+  static v = (verticalScale) => (height / guidelineBaseHeight * verticalScale);
+
+  // return value scale by horizontal base on factor
+  static m = (moderateScale, factor = 0.5) => (moderateScale + ((height / guidelineBaseWidth * moderateScale) - moderateScale) * factor); 
 }
 
 export default Responsive;
