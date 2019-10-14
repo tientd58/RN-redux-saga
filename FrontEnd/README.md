@@ -43,4 +43,11 @@ $ react-native run-android
 
 ## Demo:
 
-Screen shot:
+Screen shot:  
+
+![List task screen](https://github.com/tientd58/react-native-redux-saga/blob/master/FrontEnd/src/screenShot/list-task.png)
+![Change status task](https://github.com/tientd58/react-native-redux-saga/blob/master/FrontEnd/src/screenShot/change-status.png)
+![Options action](https://github.com/tientd58/react-native-redux-saga/blob/master/FrontEnd/src/screenShot/options.png)
+![Add new task](https://github.com/tientd58/react-native-redux-saga/blob/master/FrontEnd/src/screenShot/add-task.png)
+![Edit task](https://github.com/tientd58/react-native-redux-saga/blob/master/FrontEnd/src/screenShot/edit-task.png)
+
