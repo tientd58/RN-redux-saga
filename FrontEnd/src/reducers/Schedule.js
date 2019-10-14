@@ -6,7 +6,6 @@ import { SCHEDULE } from '../actions/types';
 const INITIAL_STATE = {
   listTask: [],
   listTaskSearch: [],
-  listTag: []
 };
 
 const updateBookMark = (list, taskId) => {
@@ -66,7 +65,6 @@ const Schedule = (state = INITIAL_STATE, action) => {
       return { 
         ...state, 
         listTask: action.payload.data.todos,
-        listTag: action.payload.tags
       };
     }
     case SCHEDULE.BOOK_MARK_TASK_REQUEST: return state;

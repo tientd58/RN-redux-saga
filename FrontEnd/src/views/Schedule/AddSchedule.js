@@ -11,10 +11,12 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 
 import styles from './styles';
 import { colors } from '../../modules/colors';
+import { ListTag } from './Components/ListTag';
 import Responsive from '../../modules/utils/responsive';
 import { InputDatePicker } from '../../components/Form/Field';
 import { Button } from '../../components/Button';
 import { DEFAULT_TASK_MODEL } from '../../modules/utils/constants';
+import { TAGS } from '../../modules/utils/mockData';
 import { validationAddSchedule } from '../../modules/utils/helpers';
 import { editTaskRequest, addTaskRequest } from '../../actions/Schedule';
 
@@ -43,7 +45,7 @@ class AddScheduleScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      task: props.navigation.getParam('task') || {},
+      task: props.navigation.getParam('task') || DEFAULT_TASK_MODEL,
       loading: false,
       errors: {}
     };
@@ -52,10 +54,22 @@ class AddScheduleScreen extends React.Component {
   componentDidMount() {
   }
 
+  mergeTags = (listDefault, list) => {
+    const ids = list.map(e => e.tagId);
+    const merged = [...list, ...listDefault.filter(e => !ids.includes(e.tagId))].sort((a, b) => b.tagId - a.tagId);
+    return merged;
+  }
+
   onUpdateData = (field, value) => {
     const { task } = this.state;
     const newTask = update(task, { [field]: { $set: value } });
     this.setState({ task: newTask });
+  }
+
+  handlePressTag = (list) => {
+    const { task } = this.state;
+    const tags = this.mergeTags(get(task, 'tags', []), list);
+    this.onUpdateData('tags', tags);
   }
 
   handleSaveSchedule = () => {
@@ -141,6 +155,7 @@ class AddScheduleScreen extends React.Component {
               />
             </View>
           </View>
+          <ListTag list={this.mergeTags(TAGS, get(task, 'tags', []))} onPressTag={this.handlePressTag} />
           <View style={{ width: '100%', alignItems: 'center' }}>
             <Button
               width={Responsive.h(150)}

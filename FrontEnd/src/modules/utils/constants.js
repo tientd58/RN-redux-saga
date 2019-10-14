@@ -1,3 +1,4 @@
+import moment from 'moment';
 
 export const USER_INFO = [
   {key: 'name', icon: 'user', title: 'Hi, My name is'},
@@ -16,10 +17,10 @@ export const FILTER_TAB = {
 export const DEFAULT_TASK_MODEL = {
   title: '',
   description: '',
-  updatedAt: 1566235508136,
-  startDate: 1566235508136,
-  startTime: 1566235508136,
-  endTime: 1566235508136,
+  updatedAt: moment().valueOf(),
+  startDate: moment().valueOf(),
+  startTime: moment().valueOf(),
+  endTime: moment().valueOf(),
   status: 'TO_DO',
   bookmark: false,
   isComplete: false,

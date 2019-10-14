@@ -10,6 +10,7 @@ export const colors = {
   YELLOW: '#FFFF00',
   GREEN: '#008000',
   ORANGE: '#FFA500',
+  PINK: '#FFC0CB',
   GRAY: '#ccc',
   LIGHT_GRAY: '#e5dfdf',
   BLACK: '#000',

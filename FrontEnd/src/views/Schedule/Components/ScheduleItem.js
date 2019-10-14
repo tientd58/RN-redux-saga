@@ -20,8 +20,6 @@ export default class ScheduleItem extends React.PureComponent{
     };
   }
 
-  renderTag = (tag) => <View style={StyleSheet.flatten([styles.tagItem, tag && { backgroundColor: tag }])} />
-
   renderSwipeOutBtns = (task) => {
     const DeleteBtn = (
       <ButtonSwipe
@@ -92,8 +90,7 @@ export default class ScheduleItem extends React.PureComponent{
             {task.bookmark && (
               <MaterialIcons size={20} name='star' color={colors.YELLOW} />
             )}
-            {this.renderTag('red')}
-            {this.renderTag('green')}
+            {task.tags.map(item => <View key={item.tagId} style={[styles.tagItem, { backgroundColor: colors[item.color.toUpperCase()] }]} />)}
           </View>
           <View style={styles.content}>
             <Text style={styles.dateItem}>{moment(task.startDate).format("ddd, DD MMM YYYY")}</Text>

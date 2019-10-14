@@ -132,12 +132,19 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: width - Responsive.h(30),
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   addIcon: {
     position: 'absolute',
     bottom: Responsive.v(20),
     right: Responsive.h(20)
+  },
+  listTagContainer: {
+    width: width - Responsive.h(30),
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingBottom: Responsive.v(15)
   }
 });
 

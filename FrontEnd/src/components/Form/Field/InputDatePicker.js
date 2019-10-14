@@ -47,7 +47,7 @@ export class InputDatePicker extends React.PureComponent{
           underlineActiveColor={colors.LIGHT_GRAY}
           underlineColor={colors.LIGHT_GRAY}
           placeholderColor={colors.LIGHT_GRAY}
-          color='red'
+          color={colors.LIGHT_GRAY}
           value={defaultValue}
           error={error}
           onPress={() => this.setState({ showDatePicker: true })}

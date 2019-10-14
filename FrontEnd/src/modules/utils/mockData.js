@@ -12,7 +12,20 @@ export const ALL_TASK = {
         status: 'TO_DO',
         bookmark: false,
         isComplete: false,
-        tags: [],
+        tags: [
+          {
+            tagId: 4,
+            color: 'yellow',
+            title: 'Yellow',
+            isSelect: true
+          },
+          {
+            tagId: 5,
+            color: 'orange',
+            title: 'Orange',
+            isSelect: true
+          }
+        ],
       },
       {
         taskId: '222222222',
@@ -26,7 +39,20 @@ export const ALL_TASK = {
         bookmark: false,
         isComplete: false,
         isPinned: true,
-        tags: [],
+        tags: [
+          {
+            tagId: 1,
+            color: 'red',
+            title: 'Red',
+            isSelect: true
+          },
+          {
+            tagId: 2,
+            color: 'blue',
+            title: 'Blue',
+            isSelect: true
+          }
+        ],
       },
       {
         taskId: '333333333',
@@ -39,7 +65,20 @@ export const ALL_TASK = {
         status: 'COMPLETED',
         bookmark: false,
         isComplete: false,
-        tags: [],
+        tags: [
+          {
+            tagId: 2,
+            color: 'blue',
+            title: 'Blue',
+            isSelect: true
+          },
+          {
+            tagId: 3,
+            color: 'green',
+            title: 'Green',
+            isSelect: true
+          }
+        ],
       },
       {
         taskId: '4444444444',
@@ -52,7 +91,20 @@ export const ALL_TASK = {
         status: 'TO_DO',
         bookmark: true,
         isComplete: false,
-        tags: [],
+        tags: [
+          {
+            tagId: 3,
+            color: 'green',
+            title: 'Green',
+            isSelect: true
+          },
+          {
+            tagId: 4,
+            color: 'yellow',
+            title: 'Yellow',
+            isSelect: true
+          }
+        ],
       },
     ],
   }
@@ -63,30 +115,36 @@ export const TAGS = [
     tagId: 1,
     color: 'red',
     title: 'Red',
+    isSelect: false
   },
   {
     tagId: 2,
     color: 'blue',
     title: 'Blue',
+    isSelect: false
   },
   {
     tagId: 3,
     color: 'green',
     title: 'Green',
+    isSelect: false
   },
   {
     tagId: 4,
     color: 'yellow',
     title: 'Yellow',
+    isSelect: false
   },
   {
     tagId: 5,
     color: 'orange',
     title: 'Orange',
+    isSelect: false
   },
   {
     tagId: 6,
     color: 'pink',
     title: 'Pink',
+    isSelect: false
   },
 ];

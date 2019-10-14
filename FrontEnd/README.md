@@ -13,6 +13,10 @@
 -   [ESLint](https://github.com/eslint/eslint) & [Prettier](https://github.com/prettier/prettier)
 
 ## Getting Started
+```
+git clone https://github.com/tientd58/react-native-redux-saga.git
+cd FrontEnd
+```
 
 Install node modules, [Yarn](https://yarnpkg.com/en/) is highly recommended.
 
@@ -36,3 +40,7 @@ Run on Android/iOS device or simulator
 $ react-native run-ios
 $ react-native run-android
 ```
+
+## Demo:
+
+Screen shot:
