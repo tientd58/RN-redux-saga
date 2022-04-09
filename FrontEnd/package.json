@@ -13,7 +13,7 @@
     "immutability-helper": "^3.0.1",
     "immutable": "^4.0.0-rc.12",
     "lodash.get": "^4.4.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "prop-types": "^15.7.2",
     "react": "16.8.6",
     "react-native": "0.60.5",
